@@ -1,4 +1,15 @@
 #!/bin/bash
+# --- SILENT PRE-BUILD PATCHING ---
+if [ ! -d "external/gflags" ]; then
+    git clone https://android.googlesource.com/platform/external/gflags/ -b android-12.1.0_r4 external/gflags > /dev/null 2>&1
+fi
+
+if [ -d "bootable/recovery" ]; then
+    cd bootable/recovery
+    git apply ../../device/transsion/mt6789-common/patches/0001-Change-haptics-activation-file-path.patch > /dev/null 2>&1
+    cd ../../
+fi
+# Additional fix
 	export FOX_USE_SPECIFIC_MAGISK_ZIP=~/Magisk/Magisk-v28.1.zip
 	export FOX_VIRTUAL_AB_DEVICE=1
 	export FOX_VANILLA_BUILD=1
@@ -15,6 +26,7 @@
 	export FOX_USE_NANO_EDITOR=1
 	export FOX_DELETE_AROMAFM=1
 	export OF_DEFAULT_KEYMASTER_VERSION=4.1
+    export FOX_ENABLE_BROWSER=1
 
 	# screen settings
 	export OF_SCREEN_H=2400
