@@ -163,3 +163,4 @@ tr_carrier /tr_carrier ext4 ro wait,slotselect,logical,first_stage_mount,nofail
 
 tr_product /tr_product erofs ro wait,slotselect,logical,first_stage_mount,nofail
 tr_preload /tr_preload erofs ro wait,slotselect,logical,first_stage_mount,nofail
+tr_preload /tr_system erofs ro wait,slotselect,logical,first_stage_mount,nofail
