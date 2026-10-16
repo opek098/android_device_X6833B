@@ -6,8 +6,3 @@
 
 PRODUCT_MAKEFILES := \
 	$(LOCAL_DIR)/twrp_X6833B.mk
-
-COMMON_LUNCH_CHOICES := \
-	twrp_X6833B-eng \
-	twrp_X6833B-userdebug \
-	twrp_X6833B-user
